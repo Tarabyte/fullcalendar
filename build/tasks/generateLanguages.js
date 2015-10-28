@@ -85,9 +85,8 @@ module.exports = function(grunt) {
 
 			datepickerLangJS = datepickerLangJS || '';
 
-			return momentLangJS + '\n' +
-				datepickerLangJS + '\n' +
-				fullCalendarLangJS;
+			//momentLangJS should be the last since it contains return statement.
+			return [datepickerLangJS, fullCalendarLangJS, momentLangJS].join('\n');
 		}
 	}
 
